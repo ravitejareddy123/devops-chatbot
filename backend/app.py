@@ -13,7 +13,7 @@ def chat():
     try:
         user_input = request.json.get('message')
         response = ollama.chat(
-            model='devops-chatbot',
+            model='gemma:2b',
             messages=[{"role": "user", "content": user_input}]
         )
         return jsonify({"response": response["message"]["content"]})
